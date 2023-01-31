@@ -67,21 +67,22 @@
 
 	<div class="flex flex-col gap-y-5">
 		<div class="p-5">
-			<h3>Horas por empleado en planning group</h3>
+			<h3>Horas por planning group</h3>
 			<table style="width: 100%; font-size: 12px;" id="entries-list" class="table table_striped w-full mt-3">
 				<thead>
 				<tr>
-					<th class="ltr:text-left rtl:text-right uppercase">Numero de empleado</th>
-					<th class="ltr:text-left rtl:text-right uppercase">Horas Trabajadas</th>
-					<th class="ltr:text-left rtl:text-right uppercase">Planning Group con mas horas</th>
+					<th class="ltr:text-left rtl:text-right uppercase">Planta</th>
+					<th class="ltr:text-left rtl:text-right uppercase">Numero De Planner</th>
+					<th class="ltr:text-left rtl:text-right uppercase">Horas Trabajadas.</th>
 				</tr>
 				</thead>
 				<tbody>
-				<?php foreach ($hours as $hour): ?>
+				<?php foreach ($hours_by_planning_group as $hour): ?>
 					<tr>
-						<td  class=""><?php echo $hour['emp_number']; ?></td>
-						<td  class=""><?php echo round($hour["mejor"],3) ; ?></td>
+						<td  class=""><?php echo $hour['plant_id']; ?></td>
 						<td  class=""><?php echo $hour["planner_id"]; ?></td>
+						<td  class=""><?php echo round($hour["hours_worked"],3) ; ?></td>
+
 					</tr>
 				<?php endforeach ?>
 				</tbody>
